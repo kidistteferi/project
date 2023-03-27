@@ -85,6 +85,7 @@ if(isset($_POST['submit'])){
 //     $res = mysqli_query($conn,$sql);
 //     if($res){
 //     echo "success";
+//work hard and harder
 // }
 
     $stm = $conn->prepare("INSERT INTO `student` (`fname`,`lname`,`password`,`sex`) VALUES (?,?,?,?)");
