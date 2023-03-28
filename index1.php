@@ -49,7 +49,7 @@ if (!$conn)
 <tr>
    <td> password:
    <i id="lock"class="fas fa-lock"></i></td>
-    <td><input type="password" id="pass" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/>
+    <td><input type="password" id="pass" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/>
      </td>
      </tr>
      
@@ -92,10 +92,9 @@ if(isset($_POST['submit'])){
     $stm->bind_param("ssss",$fname,$lname,$password,$sex);
     $fname = $_POST["fname"];
     $lname = $_POST['lname'];
-    $password = hash(algo:"md5",data:$_POST['password'], binary: false);
-    $hash = md5($password);
-   /* $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-    var_dump($hashed_password);*/
+    $password =$_POST['password']; 
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    var_dump($hashed_password);
     $sex = $_POST['sex'];
      $run = $stm->execute();
      /*require_once 'selecte1.php';*/

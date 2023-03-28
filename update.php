@@ -61,7 +61,7 @@ if(isset($_GET['id'])){
 <td>password:
 <i id="lock"class="fas fa-lock"></i>
 </td>
-<td><input type="password" id="pass" name="password" value="<?php echo  $row['password']; ?>"pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/></td><br>
+<td><input type="password" id="pass" name="password" value="<?php echo  $row['password']; ?>"pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/></td><br>
        </tr>    
 </div>
 <div class="class1">
