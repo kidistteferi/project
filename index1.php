@@ -92,9 +92,10 @@ if(isset($_POST['submit'])){
     $stm->bind_param("ssss",$fname,$lname,$password,$sex);
     $fname = $_POST["fname"];
     $lname = $_POST['lname'];
-    $password = $_POST['password'];
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-    var_dump($hashed_password);
+    $password = hash(algo:"md5",data:$_POST['password'], binary: false);
+    $hash = md5($password);
+   /* $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    var_dump($hashed_password);*/
     $sex = $_POST['sex'];
      $run = $stm->execute();
      /*require_once 'selecte1.php';*/

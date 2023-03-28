@@ -53,7 +53,7 @@ echo  "<td ><a  class='button-update'href='update.php?id=".$row['id']."'>update 
  </td>";
 echo "<td> <a  class ='button-delete' href='delete1.php?id=".$row['id']."'>delete </a> 
 </td>";
-;
+
 echo "</tr>";
 echo "</div>";
 $i++;

@@ -91,10 +91,8 @@ if(isset($_POST['submit'])){
     $id = $_POST['id'];
     $fname = $_POST["fname"];
     $lname = $_POST['lname'];
-    $password = $_POST['password'];
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-    var_dump($hashed_password);
-    $sex = $_POST['sex'];
+    $password = hash(algo:"md5",data:$_POST['password'], binary: false);
+     $sex = $_POST['sex'];
 
     $sql = "UPDATE `student` SET `id`='$id',`fname`='$fname',`lname`='$lname',`password`='$password',`sex`='$sex' WHERE `id`='$id'";
     if(mysqli_query($conn, $sql)){
